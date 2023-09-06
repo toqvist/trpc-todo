@@ -8,7 +8,7 @@ export default function TodoList({
 }: {
   initialTodos: Awaited<ReturnType<(typeof serverClient)["getTodos"]>>
 }) {
-
+// tRPC has a utility type for this exact situation called inferRouterOutputs<TRouter> to retrieve the outputs of each endpoint 
   const getTodos = trpc.getTodos.useQuery(undefined, {
     initialData: initialTodos,
     refetchOnMount: false,
